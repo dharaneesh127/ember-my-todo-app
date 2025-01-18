@@ -1,0 +1,15 @@
+{{page-title "Todos"}}
+{{!-- {{outlet}} --}}
+
+<h1>Todos</h1>
+
+<input {{on "input" this.updateNewTodoTitle}} value={{this.newTodoTilte}} type="text" placeholder="New Todo Title">
+<button type="button" {{on "click" this.addTodo }}>Add</button>
+<ul>
+    {{#each this.todos as |todo|}}
+    <li>
+        {{todo}}
+        <button type="button" {{on "click" this.deleteTodo}} >delete</button>
+    </li>
+    {{/each}}
+</ul>
